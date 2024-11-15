@@ -2,7 +2,7 @@
 
 2. Calculate minimum and maximum values with the command; 
 
-awk '{
+   awk '{
     for(i=1;i<=NF;i++) {
         if($i+0 < min || min == "") min = $i
         if($i+0 > max || max == "") max = $i
@@ -16,8 +16,8 @@ END {print "Min:", min, "Max:", max}' demo_data.tsv
 
 5. Calculate no. of rows and columns in the big_data.tsv file (first gunzip that) with the command; 
 
-row_count=$(zcat big_data.tsv.gz | wc -l)  # Count number of rows
+   row_count=$(zcat big_data.tsv.gz | wc -l)  # Count number of rows
 
-column_count=$(zcat big_data.tsv.gz | head -n 1 | awk '{print NF}')  # Count number of columns
+   column_count=$(zcat big_data.tsv.gz | head -n 1 | awk '{print NF}')  # Count number of columns
 
 6. The above .gp modified for big_data.tsv 
